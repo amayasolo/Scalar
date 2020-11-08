@@ -27,7 +27,11 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/textView" android:textSize="40sp" app:fontFamily="@font/roboto_thin"
             android:textColor="#FFFFFF"
-            android:shadowColor="#000000" app:layout_constraintHorizontal_bias="0.497"
+            android:shadowColor="#000000"
+            android:shadowDx="1.5"
+            android:shadowDy="1.5"
+            android:shadowRadius="10"
+            app:layout_constraintHorizontal_bias="0.497"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/first_name"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="25dp"/>
@@ -67,7 +71,7 @@
             android:id="@+id/password" android:layout_marginTop="50dp"
             app:layout_constraintTop_toBottomOf="@+id/email" android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/confirm_password" android:textColorHighlight="#B5E3E1"
-            android:textColorLink="#B5E3E1"/>
+            android:textColorLink="#B5E3E1" android:password="true"/>
     <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +80,7 @@
             app:layout_constraintHorizontal_bias="1.0" android:id="@+id/confirm_password"
             android:layout_marginTop="50dp" app:layout_constraintTop_toBottomOf="@+id/password"
             android:layout_marginBottom="189dp" app:layout_constraintBottom_toBottomOf="parent"
-            android:textColorLink="#B5E3E1" android:textColorHighlight="#B5E3E1"/>
+            android:textColorLink="#B5E3E1" android:textColorHighlight="#B5E3E1" android:password="true"/>
     <Button
             android:text="Create Account"
             android:layout_width="150dp"

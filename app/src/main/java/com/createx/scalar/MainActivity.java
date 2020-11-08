@@ -16,22 +16,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // To Sign Up Screen
-        signUpButton = findViewById(R.id.signUpButton);
-        final Class signup = SignUp.class;
+        signUpButton = findViewById(R.id.sign_up);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nextScreen(signup);
+                nextScreen(SignUp.class);
             }
         });
 
         // To Login Screen
-        loginButton = findViewById((R.id.loginButton));
-        final Class login = Login.class;
+        loginButton = findViewById(R.id.login);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nextScreen(login);
+                nextScreen(Login.class);
             }
         });
     }
@@ -41,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
      * @param screen next screen
      */
     public void nextScreen(Class screen) {
-        Intent intent = new Intent(MainActivity.this, screen);
+        Intent intent = new Intent(this, screen);
         startActivity(intent);
     }
 
