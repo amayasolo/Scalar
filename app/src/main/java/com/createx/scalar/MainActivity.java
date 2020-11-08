@@ -1,6 +1,5 @@
 package com.createx.scalar;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +22,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 nextScreen(signup);
+            }
+        });
+
+        // To Login Screen
+        loginButton = findViewById((R.id.loginButton));
+        final Class login = Login.class;
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextScreen(login);
             }
         });
     }
