@@ -20,13 +20,33 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        // To Inventory Screen
         createAccountButton = findViewById(R.id.create_account);
-        final Class createAccount = SignUp.class;
+        firstName = findViewById(R.id.first_name);
+        lastName = findViewById(R.id.last_name);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        confirmPassword = findViewById(R.id.confirm_password);
+
         createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nextScreen(createAccount);
+                if (firstName.length() == 0) {
+                    firstName.setError("Enter First Name");
+                } else if (lastName.length() == 0) {
+                    lastName.setError("Enter Last Name");
+                } else if (email.length() == 0) {
+                    email.setError("Enter Email");
+                } else if (password.length() == 0) {
+                    password.setError("Enter a Password");
+                } else if (!password.getText().toString().equals(confirmPassword.getText().toString())) {
+                    confirmPassword.setError("Password Does Not Match");
+                } else {
+                    // Create User
+
+
+                    // Navigate to next screen
+                    nextScreen(Inventory.class);
+                }
             }
         });
     }
