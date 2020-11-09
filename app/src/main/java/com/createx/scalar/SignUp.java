@@ -6,6 +6,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.google.android.material.textfield.TextInputEditText;
+import models.User;
 
 public class SignUp extends AppCompatActivity {
     private TextInputEditText firstName;
@@ -30,6 +31,13 @@ public class SignUp extends AppCompatActivity {
         createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean trigger = false;
+                for (User user: User.getUsers()) {
+                    if (user.getEmail().equals(email.getText().toString())) {
+                        email.setError("Email Already Taken");
+                        trigger = true;
+                    }
+                }
                 if (firstName.length() == 0) {
                     firstName.setError("Enter First Name");
                 } else if (lastName.length() == 0) {
@@ -40,9 +48,11 @@ public class SignUp extends AppCompatActivity {
                     password.setError("Enter a Password");
                 } else if (!password.getText().toString().equals(confirmPassword.getText().toString())) {
                     confirmPassword.setError("Password Does Not Match");
-                } else {
-                    // Create User
-
+                } else if (!trigger) {
+                    // Create models.User
+                    User user = new User(firstName.getText().toString(), lastName.getText().toString(),
+                            email.getText().toString(), password.getText().toString());
+                    MainActivity.setCurrentUser(user);
 
                     // Navigate to next screen
                     nextScreen(Inventory.class);

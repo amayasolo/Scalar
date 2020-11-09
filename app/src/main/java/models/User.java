@@ -1,3 +1,5 @@
+package models;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -102,7 +104,7 @@ public class User {
     }
 
     /**
-     * Adds a new scale to Scale set
+     * Adds a new scale to models.Scale set
      * @param newScale new scale
      */
     public void addScales(Scale newScale) {

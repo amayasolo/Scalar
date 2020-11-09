@@ -5,8 +5,10 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import models.User;
 
 public class MainActivity extends AppCompatActivity {
+    private static User currentUser;
     private Button signUpButton;
     private Button loginButton;
 
@@ -43,5 +45,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Gets current user
+     * @return current user
+     */
+    public static User getCurrentUser() {
+        return currentUser;
+    }
 
+    /**
+     * Sets current user
+     * @param newUser user to set to
+     */
+    public static void setCurrentUser(User newUser) {
+        currentUser = newUser;
+    }
 }
