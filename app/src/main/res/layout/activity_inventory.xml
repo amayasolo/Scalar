@@ -48,7 +48,7 @@
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.516"/>
     <TextView
             android:text="Inventory"
             android:layout_width="190dp"
@@ -56,18 +56,19 @@
             app:fontFamily="@font/roboto_thin" android:textAllCaps="true"
             android:textSize="35sp" android:textColorHighlight="#FFFFFF"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="100dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="140dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginRight="100dp" android:layout_marginEnd="100dp" android:layout_marginBottom="7dp"
-            app:layout_constraintBottom_toTopOf="@+id/inventoryList"/>
+            app:layout_constraintBottom_toTopOf="@+id/inventoryList" android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"/>
     <ImageButton
             android:layout_width="35dp"
             android:layout_height="35dp" app:srcCompat="@android:drawable/ic_menu_search"
             android:id="@+id/searchB"
             android:background="#F2994A"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="113dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="20dp"
-            android:layout_marginEnd="20dp"/>
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"/>
     <ImageButton
             android:layout_width="35dp"
             android:layout_height="35dp" app:srcCompat="@android:drawable/ic_menu_sort_by_size"
@@ -75,7 +76,7 @@
             android:background="#F2994A"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="113dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="28dp" android:layout_marginStart="28dp"/>
+            android:layout_marginLeft="10dp" android:layout_marginStart="10dp"/>
     <Button
             android:text="+"
             android:layout_width="35dp"
