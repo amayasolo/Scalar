@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class AddScale extends AppCompatActivity {
     private Button initialize_weight;
-    private Button logOut;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,15 +24,6 @@ public class AddScale extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 nextScreen(Inventory.class);
-            }
-        });
-
-        //from logout page to login
-        logOut = findViewById(R.id.back_to_start);
-        logOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nextScreen(Login.class);
             }
         });
     }
