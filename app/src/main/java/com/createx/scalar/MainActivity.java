@@ -11,8 +11,6 @@ public class MainActivity extends AppCompatActivity {
     private static User currentUser;
     private Button signUpButton;
     private Button loginButton;
-    private Button initialize_weight;
-    private Button logOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,4 +60,6 @@ public class MainActivity extends AppCompatActivity {
     public static void setCurrentUser(User newUser) {
         currentUser = newUser;
     }
+
+    User admin = new User("Create", "X", "scalar@admin.com", "scalar");
 }
