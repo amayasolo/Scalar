@@ -7,4 +7,32 @@
         android:layout_height="match_parent"
         tools:context=".LogOut">
 
+    <ImageView
+            android:layout_width="411dp"
+            android:layout_height="864dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/imageView9" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="557dp" app:layout_constraintVertical_bias="0.14"
+            android:background="#F2994A"/>
+    <TextView
+            android:text="You've successfully been logged out of Scalar"
+            android:layout_width="306dp"
+            android:layout_height="77dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/textView2" android:textSize="28sp" app:fontFamily="@font/roboto_thin"
+            android:textColor="#0F0404"
+            android:shadowColor="#000000"
+            android:shadowDx="1.5"
+            android:shadowDy="1.5"
+            android:shadowRadius="10"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/first_name"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="256dp"
+            app:layout_constraintVertical_bias="0.0"/>
+    <Button
+            android:text="Login Again Here"
+            android:layout_width="277dp"
+            android:layout_height="44dp" tools:layout_editor_absoluteY="377dp"
+            tools:layout_editor_absoluteX="67dp" android:id="@+id/back_to_start" android:background="#94EFBA"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

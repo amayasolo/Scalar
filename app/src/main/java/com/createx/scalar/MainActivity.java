@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
     private static User currentUser;
     private Button signUpButton;
     private Button loginButton;
+    private Button initialize_weight;
+    private Button logOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,24 @@ public class MainActivity extends AppCompatActivity {
         // To Login Screen
         loginButton = findViewById(R.id.login);
         loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextScreen(Login.class);
+            }
+        });
+
+        // From initialize weight to Inventory Screen
+        initialize_weight = findViewById(R.id.initialize_weight);
+        initialize_weight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextScreen(Inventory.class);
+            }
+        });
+
+        //from logout page to login
+        logOut = findViewById(R.id.back_to_start);
+        logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 nextScreen(Login.class);
