@@ -4,15 +4,16 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
 
 import java.util.ArrayList;
 
 public class Inventory extends AppCompatActivity {
-    private Button toLogoutButton;
-    private Button toAddScale;
 
 
     @Override
@@ -29,14 +30,14 @@ public class Inventory extends AppCompatActivity {
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, items);
         inventoryList.setAdapter(arrayAdapter);
 
-        toLogoutButton = findViewById(R.id.to_logout);
+        AppCompatImageButton toLogoutButton = findViewById(R.id.to_logout);
         toLogoutButton.setOnClickListener(new View.OnClickListener() {
            @Override
             public void onClick(View v) {
               nextScreen(LogOut.class);     }
        });
 
-        toAddScale = findViewById(R.id.to_add_scale);
+        Button toAddScale = findViewById(R.id.to_add_scale);
         toAddScale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

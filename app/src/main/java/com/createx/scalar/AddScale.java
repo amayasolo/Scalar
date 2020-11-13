@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 
 public class AddScale extends AppCompatActivity {
     private Button initializeWeight;
-    private Button addToInventory;
+    private ImageButton goToInventory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +31,8 @@ public class AddScale extends AppCompatActivity {
             }
         });
 
-        addToInventory = findViewById(R.id.add_to_inv);
-        addToInventory.setOnClickListener(new View.OnClickListener() {
+        goToInventory = findViewById(R.id.add_to_inv);
+        goToInventory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 nextScreen(Inventory.class);
