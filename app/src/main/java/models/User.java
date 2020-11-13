@@ -111,7 +111,7 @@ public class User {
     public ArrayList<String> getScaleDisplay() {
         ArrayList<String> items = new ArrayList<>();
         for (Scale scale: getScales()) {
-            items.add(scale.getName() + " | " + scale.getPercentage() + "Remaining");
+            items.add(scale.getName() + " | " + scale.getPercentage() + " Remaining");
         }
         return items;
     }

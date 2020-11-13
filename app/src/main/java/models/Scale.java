@@ -6,6 +6,7 @@ public class Scale {
     private double initialWeight;
     private double currentWeight;
     private double percentage;
+    private int position;
 
     public Scale(String ID, String name) {
         this.ID = ID;
@@ -50,5 +51,21 @@ public class Scale {
             return true;
         }
         return false;
+    }
+
+    /**
+     * Will be used by Inventory
+     * @return position of Scale
+     */
+    public int getPosition() {
+        return position;
+    }
+
+    /**
+     * Will be used by Inventory
+     * @param position of Scale in ListView
+     */
+    public void setPosition(int position) {
+        this.position = position;
     }
 }
