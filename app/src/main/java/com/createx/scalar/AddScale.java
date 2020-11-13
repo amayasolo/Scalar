@@ -12,20 +12,32 @@ import models.User;
 import java.util.ArrayList;
 
 public class AddScale extends AppCompatActivity {
-    private Button initialize_weight;
+    private Button initializeWeight;
+    private Button addToInventory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_scale);
 
-        initialize_weight = findViewById(R.id.initialize_weight);
-        initialize_weight.setOnClickListener(new View.OnClickListener() {
+        initializeWeight = findViewById(R.id.initialize_weight);
+        initializeWeight.setOnClickListener(new View.OnClickListener() {
+
+            // LOGIC THAT VALIDATES THE INITIALIZATION
             @Override
             public void onClick(View v) {
                 nextScreen(Inventory.class);
             }
         });
+
+        addToInventory = findViewById(R.id.add_to_inv);
+        addToInventory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextScreen(Inventory.class);
+            }
+        });
+
     }
     // From initialize weight to Inventory Screen
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 public class LogOut extends AppCompatActivity {
     private Button logOut;
+    private Button backToInv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,14 @@ public class LogOut extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 nextScreen(Login.class);
+            }
+        });
+
+        backToInv = findViewById(R.id.back_to_inv);
+        backToInv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextScreen(Inventory.class);
             }
         });
     }
