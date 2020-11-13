@@ -8,30 +8,38 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.google.android.material.textfield.TextInputEditText;
+import models.Scale;
 import models.User;
 
 import java.util.ArrayList;
 
 public class AddScale extends AppCompatActivity {
-    private Button initializeWeight;
-    private ImageButton goToInventory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_scale);
 
-        initializeWeight = findViewById(R.id.initialize_weight);
+        // Inputs
+        final TextInputEditText sensorID = findViewById(R.id.sensor_id);
+        final TextInputEditText itemName = findViewById(R.id.item_name);
+
+        Button initializeWeight = findViewById(R.id.initialize_weight);
         initializeWeight.setOnClickListener(new View.OnClickListener() {
 
-            // LOGIC THAT VALIDATES THE INITIALIZATION
             @Override
             public void onClick(View v) {
+                // INITIALIZING SCALE
+                User currentUser = MainActivity.getCurrentUser();
+                Scale scale = new Scale(sensorID.getText().toString(), itemName.getText().toString());
+                currentUser.addScale(scale);
+                Inventory.updateListView();
                 nextScreen(Inventory.class);
             }
         });
 
-        goToInventory = findViewById(R.id.add_to_inv);
+        ImageButton goToInventory = findViewById(R.id.add_to_inv);
         goToInventory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

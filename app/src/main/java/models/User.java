@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -104,15 +105,39 @@ public class User {
     }
 
     /**
+     * Gets the scale names of the user
+     * @return array list of scale names
+     */
+    public ArrayList<String> getScaleDisplay() {
+        ArrayList<String> items = new ArrayList<>();
+        for (Scale scale: getScales()) {
+            items.add(scale.getName() + " | " + scale.getPercentage() + "Remaining");
+        }
+        return items;
+    }
+    /**
      * Adds a new scale to models.Scale set
      * @param newScale new scale
      */
-    public void addScales(Scale newScale) {
+    public void addScale(Scale newScale) {
         scales.add(newScale);
     }
 
     /**
-     * Gets user set
+     * Removes scale
+     * @param user current user in app
+     * @param scale scale to be removed
+     */
+    public static void removeScale(User user, Scale scale) {
+        for (Scale i: user.getScales()) {
+            if (Scale.equals(i, scale)) {
+                user.getScales().remove(i);
+            }
+        }
+    }
+
+    /**
+     * RETURNS ALL USERS IN APP
      * @return user set
      */
     public static Set<User> getUsers() {

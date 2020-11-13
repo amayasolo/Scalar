@@ -8,30 +8,10 @@
         tools:context=".Inventory">
     <ImageView
             android:layout_width="33dp"
-            android:layout_height="114dp" app:srcCompat="@drawable/fridge" android:id="@+id/fridge3"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="28dp" android:layout_marginStart="28dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView7"
-            app:layout_constraintBottom_toTopOf="@+id/fridge4"/>
-    <ImageView
-            android:layout_width="33dp"
             android:layout_height="114dp" app:srcCompat="@drawable/fridge" android:id="@+id/fridge1"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="28dp" android:layout_marginStart="28dp" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
-    <ImageView
-            android:layout_width="33dp"
-            android:layout_height="114dp" app:srcCompat="@drawable/fridge" android:id="@+id/fridge4"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="28dp" android:layout_marginStart="28dp"
-            app:layout_constraintTop_toBottomOf="@+id/fridge3" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="210dp"/>
-    <ImageView
-            android:layout_width="33dp"
-            android:layout_height="114dp" app:srcCompat="@drawable/fridge" android:id="@+id/imageView7"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="28dp" android:layout_marginStart="28dp"
-            app:layout_constraintTop_toBottomOf="@+id/fridge1" app:layout_constraintBottom_toTopOf="@+id/fridge3"/>
     <ListView
             android:layout_width="323dp"
             android:layout_height="708dp"
@@ -42,7 +22,7 @@
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
             app:layout_constraintStart_toEndOf="@+id/fridge1"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" android:layout_marginTop="200dp">
     </ListView>
     <androidx.appcompat.widget.Toolbar
             android:layout_width="400dp"

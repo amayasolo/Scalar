@@ -10,10 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
+import models.User;
 
 import java.util.ArrayList;
 
 public class Inventory extends AppCompatActivity {
+    private static ListView inventoryList;
 
 
     @Override
@@ -21,14 +23,10 @@ public class Inventory extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
-        ArrayList<String> items = new ArrayList<>();
-        items.add("MILK\n79% Remaining | 4 days old");
-        items.add("BUTTER\n90% Remaining | 2 days old");
-        items.add("ORANGE JUICE\n55% Remaining | 5 days old");
-        items.add("EGG\n95% Remaining | 1 days old");
-        ListView inventoryList = findViewById(R.id.inventoryList);
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, items);
-        inventoryList.setAdapter(arrayAdapter);
+
+        inventoryList = findViewById(R.id.inventoryList);
+
+        updateListView();
 
         AppCompatImageButton toLogoutButton = findViewById(R.id.to_logout);
         toLogoutButton.setOnClickListener(new View.OnClickListener() {
@@ -52,5 +50,11 @@ public class Inventory extends AppCompatActivity {
     public void nextScreen(Class screen) {
         Intent intent = new Intent(this, screen);
         startActivity(intent);
+    }
+
+    public static void updateListView() {
+        ArrayAdapter arrayAdapter = new ArrayAdapter(Inventory.inventoryList.getContext(), android.R.layout.simple_list_item_1,
+                MainActivity.getCurrentUser().getScaleDisplay());
+        inventoryList.setAdapter(arrayAdapter);
     }
 }

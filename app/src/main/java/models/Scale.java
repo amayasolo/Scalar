@@ -44,4 +44,11 @@ public class Scale {
         percentage = currentWeight/initialWeight;
         return percentage;
     }
+
+    public static boolean equals(Scale scale1, Scale scale2) {
+        if (scale1.name.equals(scale2.name) && scale1.ID.equals(scale2.ID)) {
+            return true;
+        }
+        return false;
+    }
 }
