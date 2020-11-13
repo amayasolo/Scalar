@@ -15,8 +15,13 @@
             app:layout_constraintHorizontal_bias="0.0" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="557dp" app:layout_constraintVertical_bias="0.14"
             android:background="#F2994A"/>
+    <Button
+            android:text="NO, RETURN TO INVENTORY."
+            android:layout_width="277dp"
+            android:layout_height="44dp" tools:layout_editor_absoluteY="358dp"
+            android:id="@+id/back_to_start3" android:background="#94EFBA" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
     <TextView
-            android:text="You've successfully been logged out of Scalar"
             android:layout_width="306dp"
             android:layout_height="77dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -28,11 +33,13 @@
             android:shadowRadius="10"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/first_name"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="256dp"
-            app:layout_constraintVertical_bias="0.0"/>
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="224dp"
+            app:layout_constraintVertical_bias="0.0" android:text="Are you sure you want to log out of Scalar?"
+            app:layout_constraintHorizontal_bias="0.494"/>
     <Button
-            android:text="Login Again Here"
+            android:text="YES, LOG ME OUT."
             android:layout_width="277dp"
-            android:layout_height="44dp" tools:layout_editor_absoluteY="377dp"
-            tools:layout_editor_absoluteX="67dp" android:id="@+id/back_to_start" android:background="#94EFBA"/>
+            android:layout_height="44dp" tools:layout_editor_absoluteY="444dp"
+            android:id="@+id/back_to_start" android:background="#94EFBA" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

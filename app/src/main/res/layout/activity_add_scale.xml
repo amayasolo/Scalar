@@ -66,4 +66,10 @@
             app:layout_constraintTop_toTopOf="@+id/imageView4"
             app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintBottom_toTopOf="@+id/textView4"/>
+    <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp" app:srcCompat="@drawable/back"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp" android:id="@+id/add_to_inv"
+            android:scaleType="fitCenter" app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp" android:background="#F2994A"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

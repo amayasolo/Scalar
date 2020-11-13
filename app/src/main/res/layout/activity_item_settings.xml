@@ -37,6 +37,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="557dp"/>
+    <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp" app:srcCompat="@drawable/back"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp" android:id="@+id/item_to_inv"
+            android:scaleType="fitCenter" app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp" android:background="#F2994A"/>
     <TextView
             android:text="ITEM SETTINGS"
             android:layout_width="wrap_content"
