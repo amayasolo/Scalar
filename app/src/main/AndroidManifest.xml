@@ -9,6 +9,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity
+                android:name=".Bluetooth"
+                android:label="@string/title_activity_bluetooth"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity android:name=".LogOut">
         </activity>
         <activity android:name=".AddScale">
@@ -28,7 +33,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
+
+        <meta-data
+                android:name="preloaded_fonts"
+                android:resource="@array/preloaded_fonts"/>
     </application>
 
 </manifest>
