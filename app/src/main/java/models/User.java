@@ -125,13 +125,12 @@ public class User {
 
     /**
      * Removes scale
-     * @param user current user in app
      * @param scale scale to be removed
      */
-    public static void removeScale(User user, Scale scale) {
-        for (Scale i: user.getScales()) {
+    public void deleteScale(Scale scale) {
+        for (Scale i: getScales()) {
             if (Scale.equals(i, scale)) {
-                user.getScales().remove(i);
+                getScales().remove(i);
             }
         }
     }
