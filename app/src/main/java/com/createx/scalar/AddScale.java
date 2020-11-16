@@ -35,7 +35,7 @@ public class AddScale extends AppCompatActivity {
                 Scale scale = new Scale(sensorID.getText().toString(), itemName.getText().toString());
                 currentUser.addScale(scale);
                 Inventory.updateListView(scale, true);
-                nextScreen(Inventory.class);
+                nextScreen(Bluetooth.class);
             }
         });
 
