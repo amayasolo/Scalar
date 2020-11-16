@@ -8,6 +8,7 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.widget.AppCompatImageButton;
+import models.User;
 
 public class ItemSettings extends AppCompatActivity {
 
@@ -36,6 +37,18 @@ public class ItemSettings extends AppCompatActivity {
         itemToInventory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                nextScreen(Inventory.class);
+            }
+        });
+
+        // Deleting Item from Inventory
+        AppCompatImageButton deleteItem = findViewById(R.id.delete_item);
+        deleteItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                User currentUser = MainActivity.getCurrentUser();
+                currentUser.deleteScale(Inventory.getItemClicked());
+                Inventory.updateListView(Inventory.getItemClicked(), false);
                 nextScreen(Inventory.class);
             }
         });
