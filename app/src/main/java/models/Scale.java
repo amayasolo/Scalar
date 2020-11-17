@@ -11,6 +11,8 @@ public class Scale {
     public Scale(String ID, String name) {
         this.ID = ID;
         this.name = name;
+        this.initialWeight = 1;
+        this.currentWeight = 1;
     }
 
     public String getID() {
@@ -38,7 +40,7 @@ public class Scale {
     }
 
     public double getPercentage() {
-        percentage = currentWeight/initialWeight;
+        percentage = 100 * (currentWeight/initialWeight);
         return percentage;
     }
 
