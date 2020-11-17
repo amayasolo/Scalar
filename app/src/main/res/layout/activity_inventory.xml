@@ -48,15 +48,6 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="44dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="16dp" android:layout_marginStart="16dp"/>
-    <ImageButton
-            android:layout_width="35dp"
-            android:layout_height="35dp" app:srcCompat="@android:drawable/ic_menu_share"
-            android:id="@+id/connectB"
-            android:background="#F2994A"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="44dp"
-            app:layout_constraintEnd_toStartOf="@+id/searchB" android:layout_marginRight="8dp"
-            android:layout_marginEnd="8dp"/>
     <Button
             android:text="+"
             android:layout_width="35dp"
@@ -64,8 +55,8 @@
             android:textColor="#FFE2CA" android:textSize="20sp"
             android:textColorHighlight="#353030" android:background="#F2994A"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="44dp" app:layout_constraintEnd_toStartOf="@+id/connectB"
-            android:layout_marginRight="4dp" android:layout_marginEnd="4dp"/>
+            android:layout_marginTop="44dp"
+            tools:layout_editor_absoluteX="264dp"/>
     <ImageButton
             android:layout_width="35dp"
             android:layout_height="35dp" app:srcCompat="@android:drawable/ic_menu_search"
@@ -74,5 +65,15 @@
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="44dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="12dp"
             android:layout_marginEnd="12dp"/>
+    <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="35dp" app:srcCompat="@drawable/refresh" android:id="@+id/refresh"
+            android:scaleType="centerInside"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toStartOf="@+id/searchB"
+            android:layout_marginTop="44dp" android:background="#F2994A" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp" app:layout_constraintStart_toEndOf="@+id/to_add_scale"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:paddingLeft="5"
+            android:paddingTop="5" android:paddingRight="5" android:paddingBottom="5" android:padding="5"
+            android:tint="#FFE2CA"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
