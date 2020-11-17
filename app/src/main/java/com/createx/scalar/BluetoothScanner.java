@@ -59,6 +59,14 @@ public class BluetoothScanner extends AppCompatActivity {
         listAdapter = new ArrayAdapter<>(BluetoothScanner.devicesList.getContext(), android.R.layout.simple_list_item_1, arrayList);
         devicesList.setAdapter(listAdapter);
 
+//        devicesList.setOnClickListener(new AdapterView.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                devicesList.setSelection(0);
+//                devicesList.getSelectedView().setSelected(true);
+//            }
+//        });
+
         // check bluetooth state
         checkBluetoothState();
 
@@ -68,7 +76,7 @@ public class BluetoothScanner extends AppCompatActivity {
 
         if (bluetoothAdapter != null && bluetoothAdapter.isEnabled()) {
             if (checkCoarseLocationPermission()) {
-                listAdapter.clear();
+                // listAdapter.clear();
                 bluetoothAdapter.startDiscovery();
             } else {
                 checkBluetoothState();
