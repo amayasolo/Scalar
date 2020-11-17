@@ -39,6 +39,10 @@ public class Scale {
         }
     }
 
+    public double getCurrentWeight() {
+        return currentWeight;
+    }
+
     public double getPercentage() {
         percentage = 100 * (currentWeight/initialWeight);
         return percentage;

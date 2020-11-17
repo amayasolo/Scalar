@@ -54,7 +54,8 @@
             android:layout_width="395dp"
             android:layout_height="347dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="96dp" app:layout_constraintTop_toBottomOf="@+id/toolbar4"
-            app:layout_constraintHorizontal_bias="0.0" android:id="@+id/discoverable_devices"/>
+            app:layout_constraintTop_toBottomOf="@+id/toolbar4"
+            app:layout_constraintHorizontal_bias="0.0" android:id="@+id/discoverable_devices"
+            android:longClickable="true" android:cacheColorHint="#00FFFFFF" android:background="#E8E4DF"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

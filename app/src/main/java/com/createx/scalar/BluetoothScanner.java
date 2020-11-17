@@ -31,6 +31,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.ListFragment;
 import models.Scale;
+
+import java.security.AccessController;
 import java.util.ArrayList;
 /**
  * Activity for scanning and displaying available Bluetooth LE devices.
@@ -38,9 +40,11 @@ import java.util.ArrayList;
 public class BluetoothScanner extends AppCompatActivity {
     public static final int REQUEST_ACCESS_COARSE_LOCATION = 1;
     public static final int REQUEST_ENABLE_BLUETOOTH = 1;
-    private ListView devicesList;
+    private static ListView devicesList;
     private BluetoothAdapter bluetoothAdapter;
-    private ArrayAdapter<String> listAdapter;
+    private ArrayAdapter listAdapter;
+    private ArrayList<String> arrayList = new ArrayList<>();
+    private Button save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +55,8 @@ public class BluetoothScanner extends AppCompatActivity {
         devicesList = findViewById(R.id.discoverable_devices);
 
         // we create a simple array
-        listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        arrayList.add("BLUEFRUIT_63400001");
+        listAdapter = new ArrayAdapter<>(BluetoothScanner.devicesList.getContext(), android.R.layout.simple_list_item_1, arrayList);
         devicesList.setAdapter(listAdapter);
 
         // check bluetooth state
@@ -72,8 +77,18 @@ public class BluetoothScanner extends AppCompatActivity {
 
         checkCoarseLocationPermission();
 
+        // connect
+        Button connect = findViewById(R.id.connect_to_device);
+        connect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(BluetoothScanner.this, "Connecting to scale...", Toast.LENGTH_LONG).show();
+                Toast.makeText(BluetoothScanner.this, "Your scale is now connected.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         //back to inventory
-        Button save = findViewById(R.id.save_bluetooth);
+        save = findViewById(R.id.save_bluetooth);
         //only changes screen. need to add bluetooth connectivity
         save.setOnClickListener(new View.OnClickListener() {
             @Override

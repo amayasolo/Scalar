@@ -48,8 +48,21 @@ public class ItemSettings extends AppCompatActivity {
             public void onClick(View v) {
                 User currentUser = MainActivity.getCurrentUser();
                 currentUser.deleteScale(Inventory.getItemClicked());
-                Inventory.updateListView(Inventory.getItemClicked(), false);
+                Inventory.updateListView(Inventory.getItemClicked(), 1);
                 nextScreen(Inventory.class);
+            }
+        });
+
+        Button resetWeight = findViewById(R.id.reset_weight_sensor);
+        resetWeight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Inventory.getItemClicked().setInitialWeight(Inventory.getItemClicked().getCurrentWeight());
+                Inventory.updateListView(Inventory.getItemClicked(), 2);
+
+                double remain = Inventory.getItemClicked().getPercentage();
+                EditText itemRemain = findViewById(R.id.item_remain);
+                itemRemain.setText(String.valueOf(remain));
             }
         });
     }

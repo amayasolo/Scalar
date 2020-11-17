@@ -57,6 +57,15 @@ public class Inventory extends AppCompatActivity {
                 nextScreen(ItemSettings.class);
             }
         });
+
+        AppCompatImageButton refresh = findViewById(R.id.refresh);
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemClicked.setCurrentWeight(itemClicked.getCurrentWeight() * 0.545);
+                updateListView(itemClicked, 2);
+            }
+        });
     }
 
     /**
@@ -68,11 +77,11 @@ public class Inventory extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public static void updateListView(Scale scale, boolean addition) {
+    public static void updateListView(Scale scale, int mode) {
         // Setting position of Scale
-        if (addition) {
+        if (mode == 0) {
             scale.setPosition(positionCounter++);
-        } else { // else rearrange all positions past deleted scale
+        } else if (mode == 1) { // else rearrange all positions past deleted scale
             for (int i = scale.getPosition(); i < inventoryList.getCount(); i++) {
                 for (Scale curr: MainActivity.getCurrentUser().getScales()) {
                     if (curr.getPosition() == i) {
