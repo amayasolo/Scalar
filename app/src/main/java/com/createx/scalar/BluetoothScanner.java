@@ -38,7 +38,7 @@ import java.util.ArrayList;
  * Activity for scanning and displaying available Bluetooth LE devices.
  */
 public class BluetoothScanner extends AppCompatActivity {
-    public static final int REQUEST_ACCESS_COARSE_LOCATION = 1;
+    public static final int REQUEST_ACCESS_FINE_LOCATION = 1;
     public static final int REQUEST_ENABLE_BLUETOOTH = 1;
     private static ListView devicesList;
     private BluetoothAdapter bluetoothAdapter;
@@ -55,7 +55,7 @@ public class BluetoothScanner extends AppCompatActivity {
         devicesList = findViewById(R.id.discoverable_devices);
 
         // we create a simple array
-        arrayList.add("BLUEFRUIT_63400001");
+        arrayList.add("BLUEFRUIT \nD4:28:D0:94:0G:DF");
         listAdapter = new ArrayAdapter<>(BluetoothScanner.devicesList.getContext(), android.R.layout.simple_list_item_1, arrayList);
         devicesList.setAdapter(listAdapter);
 
@@ -115,10 +115,10 @@ public class BluetoothScanner extends AppCompatActivity {
     }
 
     private boolean checkCoarseLocationPermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
             != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.ACCESS_COARSE_LOCATION},
-                    REQUEST_ACCESS_COARSE_LOCATION);
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION},
+                    REQUEST_ACCESS_FINE_LOCATION);
             return false;
         } else {
             return true;
