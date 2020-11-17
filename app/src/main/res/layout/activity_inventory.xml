@@ -56,7 +56,8 @@
             android:textColorHighlight="#353030" android:background="#F2994A"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="44dp"
-            tools:layout_editor_absoluteX="264dp"/>
+            app:layout_constraintStart_toEndOf="@+id/Inventory" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"/>
     <ImageButton
             android:layout_width="35dp"
             android:layout_height="35dp" app:srcCompat="@android:drawable/ic_menu_search"
@@ -72,8 +73,8 @@
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toStartOf="@+id/searchB"
             android:layout_marginTop="44dp" android:background="#F2994A" android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp" app:layout_constraintStart_toEndOf="@+id/to_add_scale"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:paddingLeft="5"
-            android:paddingTop="5" android:paddingRight="5" android:paddingBottom="5" android:padding="5"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:paddingLeft="5dp"
+            android:paddingTop="5dp" android:paddingRight="5dp" android:paddingBottom="5dp" android:padding="5dp"
             android:tint="#FFE2CA"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

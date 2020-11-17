@@ -10,7 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 
 public class Bluetooth extends AppCompatActivity {
-    private Button weightsensor;
+    private Button save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +28,9 @@ public class Bluetooth extends AppCompatActivity {
 //            }
 //        });
         //back to inventory
-        weightsensor = findViewById(R.id.weight_sensor_a);
+        save = findViewById(R.id.save_bluetooth);
         //only changes screen. need to add bluetooth connectivity
-        weightsensor.setOnClickListener(new View.OnClickListener() {
+        save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 nextScreen(Inventory.class);
