@@ -62,6 +62,12 @@ public class Inventory extends AppCompatActivity {
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(Inventory.this, "Refreshing Scales", Toast.LENGTH_LONG).show();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 itemClicked.setCurrentWeight(itemClicked.getCurrentWeight() * 0.545);
                 updateListView(itemClicked, 2);
             }
