@@ -14,8 +14,10 @@ import java.util.ArrayList;
 
 public class Inventory extends AppCompatActivity {
     private static ListView inventoryList;
-    private static int positionCounter;
+    private static int positionCounter = -1;
     private static Scale itemClicked;
+    private static ArrayAdapter arrayAdapter;
+    private static boolean trigger = false; // to ensure array adapter isn't created again
 
 
     @Override
@@ -26,8 +28,10 @@ public class Inventory extends AppCompatActivity {
 
         inventoryList = findViewById(R.id.inventoryList);
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(Inventory.inventoryList.getContext(), android.R.layout.simple_list_item_1,
-                MainActivity.getCurrentUser().getScaleDisplay());
+        if (!trigger) {
+            arrayAdapter = new ArrayAdapter(Inventory.inventoryList.getContext(), android.R.layout.simple_list_item_1);
+        }
+
         inventoryList.setAdapter(arrayAdapter);
 
         AppCompatImageButton toLogoutButton = findViewById(R.id.to_logout);
@@ -84,9 +88,12 @@ public class Inventory extends AppCompatActivity {
     }
 
     public static void updateListView(Scale scale, int mode) {
+        trigger = true;
         // Setting position of Scale
         if (mode == 0) {
-            scale.setPosition(positionCounter++);
+            scale.setPosition(positionCounter + 1);
+            positionCounter++;
+            arrayAdapter.add(scale.toString());
         } else if (mode == 1) { // else rearrange all positions past deleted scale
             for (int i = scale.getPosition(); i < inventoryList.getCount(); i++) {
                 for (Scale curr: MainActivity.getCurrentUser().getScales()) {
@@ -96,11 +103,9 @@ public class Inventory extends AppCompatActivity {
                 }
             }
             positionCounter--;
+            arrayAdapter.remove(scale.toString());
         }
-
-        ArrayAdapter arrayAdapter = new ArrayAdapter(Inventory.inventoryList.getContext(), android.R.layout.simple_list_item_1,
-                MainActivity.getCurrentUser().getScaleDisplay());
-        inventoryList.setAdapter(arrayAdapter);
+        arrayAdapter.notifyDataSetChanged();
     }
 
     /**

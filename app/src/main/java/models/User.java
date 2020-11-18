@@ -104,17 +104,17 @@ public class User {
         return scales;
     }
 
-    /**
-     * Gets the scale names of the user
-     * @return array list of scale names
-     */
-    public ArrayList<String> getScaleDisplay() {
-        ArrayList<String> items = new ArrayList<>();
-        for (Scale scale: getScales()) {
-            items.add(scale.getName() + " | " + scale.getPercentage() + "% Remaining");
-        }
-        return items;
-    }
+//    /**
+//     * Gets the scale names of the user
+//     * @return array list of scale names
+//     */
+//    public ArrayList<String> getScaleDisplay() {
+//        ArrayList<String> items = new ArrayList<>();
+//        for (Scale scale: getScales()) {
+//            items.add(scale.getName() + " | " + scale.getPercentage() + "% Remaining");
+//        }
+//        return items;
+//    }
     /**
      * Adds a new scale to models.Scale set
      * @param newScale new scale

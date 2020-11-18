@@ -70,4 +70,9 @@ public class Scale {
     public void setPosition(int position) {
         this.position = position;
     }
+
+    public String toString() {
+        String str = getName() + " | " + getPercentage() + "% Remaining";
+        return str;
+    }
 }
