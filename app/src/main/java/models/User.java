@@ -13,7 +13,7 @@ public class User {
     private String lastName;
     private String email;
     private String password;
-    private Set<Scale> scales;
+    private ArrayList<Scale> scales;
     private static Set<User> users = new HashSet<User>();
 
     /**
@@ -28,7 +28,7 @@ public class User {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.scales = new HashSet<Scale>();
+        this.scales = new ArrayList<Scale>();
         users.add(this);
     }
 
@@ -100,21 +100,21 @@ public class User {
      * Gets scales
      * @return set of Scales
      */
-    public Set<Scale> getScales() {
+    public ArrayList<Scale> getScales() {
         return scales;
     }
 
-//    /**
-//     * Gets the scale names of the user
-//     * @return array list of scale names
-//     */
-//    public ArrayList<String> getScaleDisplay() {
-//        ArrayList<String> items = new ArrayList<>();
-//        for (Scale scale: getScales()) {
-//            items.add(scale.getName() + " | " + scale.getPercentage() + "% Remaining");
-//        }
-//        return items;
-//    }
+    /**
+     * Gets the scale names of the user
+     * @return array list of scale names
+     */
+    public ArrayList<String> getScaleDisplay() {
+        ArrayList<String> items = new ArrayList<>();
+        for (Scale scale: getScales()) {
+            items.add(scale.toString());
+        }
+        return items;
+    }
     /**
      * Adds a new scale to models.Scale set
      * @param newScale new scale

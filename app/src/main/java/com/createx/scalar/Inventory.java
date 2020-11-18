@@ -18,6 +18,7 @@ public class Inventory extends AppCompatActivity {
     private static Scale itemClicked;
     private static ArrayAdapter arrayAdapter;
     private static boolean trigger = false; // to ensure array adapter isn't created again
+    private static ArrayList<String> scaleDisplay = MainActivity.getCurrentUser().getScaleDisplay();
 
 
     @Override
@@ -29,7 +30,8 @@ public class Inventory extends AppCompatActivity {
         inventoryList = findViewById(R.id.inventoryList);
 
         if (!trigger) {
-            arrayAdapter = new ArrayAdapter(Inventory.inventoryList.getContext(), android.R.layout.simple_list_item_1);
+            arrayAdapter = new ArrayAdapter(Inventory.inventoryList.getContext(), android.R.layout.simple_list_item_1,
+                    scaleDisplay);
         }
 
         inventoryList.setAdapter(arrayAdapter);
@@ -73,7 +75,8 @@ public class Inventory extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 itemClicked.setCurrentWeight(itemClicked.getCurrentWeight() * 0.645);
-                updateListView(itemClicked, 2);
+                scaleDisplay.set(itemClicked.getPosition(), itemClicked.toString());
+                arrayAdapter.notifyDataSetChanged();
             }
         });
     }
@@ -107,6 +110,7 @@ public class Inventory extends AppCompatActivity {
         }
         arrayAdapter.notifyDataSetChanged();
     }
+
 
     /**
      * For item settings class to reference
