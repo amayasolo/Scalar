@@ -74,8 +74,10 @@ public class Inventory extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                itemClicked.setCurrentWeight(itemClicked.getCurrentWeight() * 0.645);
-                updateItem();
+                if (itemClicked != null) {
+                    itemClicked.setCurrentWeight(itemClicked.getCurrentWeight() * 0.645);
+                    updateItem();
+                }
 
             }
         });
