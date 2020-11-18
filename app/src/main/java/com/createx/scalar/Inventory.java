@@ -75,8 +75,8 @@ public class Inventory extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 itemClicked.setCurrentWeight(itemClicked.getCurrentWeight() * 0.645);
-                scaleDisplay.set(itemClicked.getPosition(), itemClicked.toString());
-                arrayAdapter.notifyDataSetChanged();
+                updateItem();
+
             }
         });
     }
@@ -111,6 +111,11 @@ public class Inventory extends AppCompatActivity {
         arrayAdapter.notifyDataSetChanged();
     }
 
+    public static void updateItem() {
+        scaleDisplay.set(itemClicked.getPosition(), itemClicked.toString());
+        arrayAdapter.notifyDataSetChanged();
+    }
+
 
     /**
      * For item settings class to reference
@@ -119,4 +124,5 @@ public class Inventory extends AppCompatActivity {
     public static Scale getItemClicked() {
         return itemClicked;
     }
+
 }

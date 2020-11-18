@@ -58,7 +58,7 @@ public class ItemSettings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Inventory.getItemClicked().setInitialWeight(Inventory.getItemClicked().getCurrentWeight());
-                Inventory.updateListView(Inventory.getItemClicked(), 2);
+                Inventory.updateItem();
 
                 double remain = Inventory.getItemClicked().getPercentage();
                 EditText itemRemain = findViewById(R.id.item_remain);

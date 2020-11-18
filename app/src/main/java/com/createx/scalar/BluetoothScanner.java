@@ -31,7 +31,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.ListFragment;
 import models.Scale;
-
 import java.security.AccessController;
 import java.util.ArrayList;
 /**
