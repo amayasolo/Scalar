@@ -104,8 +104,6 @@ public class BluetoothScanner extends AppCompatActivity {
                 nextScreen(Inventory.class);
             }
         });
-
-        //
     }
 
     @Override

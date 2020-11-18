@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Bluetooth">
+        tools:context=".Bluetooth" android:background="#FFFFFF">
 
     <androidx.appcompat.widget.Toolbar
             android:layout_width="398dp"
@@ -56,6 +56,8 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar4"
             app:layout_constraintHorizontal_bias="0.0" android:id="@+id/discoverable_devices"
-            android:longClickable="true" android:cacheColorHint="#00FFFFFF" android:background="#E8E4DF"/>
+            android:longClickable="true" android:cacheColorHint="#00FFFFFF" android:background="#FFFFFF"
+            android:choiceMode="singleChoice"
+            android:listSelector="#DCD8D8"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
