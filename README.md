@@ -1,5 +1,5 @@
 # Scalar, a Fridge Usage Tracker - Fall 2020 (Create X)
-This project was developed during the Fall 2020 semester of Create X, where I worked on creating a product that tracks fridge item usage via an Android app and a Bluetooth-connected scale.
+This project was developed during the Fall 2020 semester of Create X, where we worked on creating a product that tracks fridge item usage via an Android app and a Bluetooth-connected scale.
 
 ## Key Features
 **Fridge Item Tracking:** Monitor the usage of items in your fridge using a Bluetooth-connected scale and Android app.
